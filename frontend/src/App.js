@@ -5,13 +5,13 @@ export default class App extends Component {
   state = { response: "" }
 
   componentDidMount() {
-    axios.get("http://localhost:8000/").then((response) => {
+    axios.get("http://localhost:8000/getData").then((response) => {
       this.setState({ response: JSON.stringify(response.data).split("{").join("{\n\t").split(",").join(",\n\t").split("}").join("\n}") })
     }).catch((err) => {
       console.log(err)
     })
   }
-  
+
   render() {
     return (
       <pre>

@@ -9,7 +9,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000","http:
 
 generated_uuids = set()
 
-@app.get("/")
+@app.get("/getData")
 def root():
     new_uuid = str(uuid.uuid4())
     while new_uuid in generated_uuids:
