@@ -6,7 +6,7 @@ export default class App extends Component {
 
   componentDidMount() {
     axios.defaults.baseURL = "http://localhost:8000"
-    axios.get("/docInfo").then((res) => {
+    axios.get("/doc_info").then((res) => {
       this.setState({ docInfo: JSON.stringify(res.data).split("{").join("{\n\t").split(",").join(",\n\t").split("}").join("\n}") })
     })
   }
